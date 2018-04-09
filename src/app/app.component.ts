@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'ToDo List';
+  todoList = [];
+  @ViewChild('todoInput') todoInputRef: ElementRef;
+
+
+  addTodo() {
+    const todo = this.todoInputRef.nativeElement.value;
+    this.todoList.push(todo);
+  }
 }
