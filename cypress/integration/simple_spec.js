@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('My First Test', function() {
   it('Write a todo!', function() {
     cy.visit('http://localhost:4200')
@@ -13,3 +15,4 @@ describe('My Second Test', function() {
     cy.get('#todoList>li').should('contain', 'This is a todo')
   })
 })
+
